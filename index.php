@@ -19,6 +19,8 @@ homepage
   require('signup_form.php');
   ?>
 
+<script src="script.js"></script>
+
 </body>
 
 </html>

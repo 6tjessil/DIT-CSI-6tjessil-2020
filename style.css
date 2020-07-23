@@ -288,6 +288,7 @@ th{
   color:white;
   background-color: #274196;
   font-size: 18px;
+  cursor: pointer;
 }
 .modal {
   display: none; /* Hidden by default */
@@ -327,17 +328,4 @@ th{
 .close:focus {
   color: red;
   cursor: pointer;
-}
-
-nav button[id='loginbtn']{
-  width: 100%;
-  border: none;
-  outline: none;
-  height: 45px;
-  color:white;
-  background-color:black;
-  font-size: 15px;
-  font-family: 'Varela Round';
-  padding: 20px;
-
 }

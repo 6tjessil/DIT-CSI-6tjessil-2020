@@ -18,6 +18,8 @@
   require("login_form.php");
   require('signup_form.php');
   ?>
+  <script src="script.js"></script>
+
 </body>
 
 </html>
