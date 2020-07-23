@@ -1,7 +1,7 @@
 /*Style sheet*/
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto&family=Varela+Round&display=swap');
-
+/*Setting up site*/
 *{
   margin:0;
   padding:0;
@@ -9,58 +9,51 @@
 
 body{
   font-family:arial;
+  background-color: #111010;
+  color:white;
 }
+
 
 nav { /*Nav bar */
   height: 61px;
   grid-column:1/9;
-  background-color: black;
+  background-color: #080808;
 }
 
 .nav-title {
   height: 100%;
   grid-column:2/9;
-  background-color:red;
   padding-right:10px;
-}
-
-.nav-title p {
-  float:left;
-  font-size:30px;
-  padding:10px 0 10px 10px;
-  font-family:arial;
-  color:white;
 }
 
 .mainlinks{
   font-family: 'Varela Round';
-  background-color:black;
+  background-color:#080808;
   margin-left:auto;
-  width:450px;
+  width:600px;
 }
 
 .mainlinks li a{ 
   display:inline-block;
   text-decoration:none;
-  color: white;
+  color:white;
   padding: 20.5px;
 }
 .mainlinks li{ 
   list-style:none;
-  background-color:black;
+  background-color:#080808;
   display:inline-block;
   text-decoration:none;
 }
 
 .mainlinks a:hover{
-background-color: #f1f1f1;
-color: #111;
+background-color: #ddd;
+color: black;
 }
-
 
 /* Style The Dropdown Button */
 .dropbtn {
-  background-color: black;
+  background-color: #080808;
   color: white;
   font-family: 'Varela Round';
   padding: 20.5px;
@@ -81,7 +74,7 @@ color: #111;
   font-family: 'Varela Round';
   display: none;
   position: absolute;
-  background-color: #111;
+  background-color: #080808;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
   width: 100%;
@@ -92,7 +85,7 @@ color: #111;
 
 /* Links inside the dropdown */
 .dropdown-content a {
-  color: white;
+  color: var(--font-color);
   padding: 12px 16px;
   text-decoration: none;
   width: 100%;
@@ -101,7 +94,7 @@ color: #111;
 }
 
 /* Change color of dropdown links on hover */
-.dropdown-content a:hover {background-color: #f1f1f1;color: #111;width:73%;}
+.dropdown-content a:hover {background-color: #f1f1f1;color: #080808;width:73%;}
 
 /* Show the dropdown menu on hover */
 .dropdown:hover .dropdown-content {
@@ -110,10 +103,11 @@ color: #111;
 
 /* Change the background color of the dropdown button when the dropdown content is shown */
 .dropdown:hover .dropbtn {
-  background-color: #f1f1f1;
-  color: #111;
+  background-color: #ddd;
+  color: black;
 }
 
+/*This is used to setup the way the tables will look (this is used to display data)*/
 table{
    border-collapse: collapse;
    width: 100%;
@@ -122,7 +116,7 @@ table{
 }
 
 tr{
-  color: black;
+  color: white;
   height:50px;
 }
 
@@ -132,7 +126,7 @@ td{
 }
 
 tr:nth-child(odd){
-  background-color:lightgray; 
+  background-color:#141414; 
 }
 
 th{
@@ -140,7 +134,7 @@ th{
   width:100px;
 }
 
-/* Style the tab */
+/* This is used to style the tabs that are used to hold admin actions such as delete and update. */
 .tab {
   overflow: hidden;
   border: 1px solid #ccc;
@@ -195,54 +189,57 @@ th{
   padding:10px;
 }
 
+/*Setting up a grid system*/
 .grid-content{
   background-color: green;
 }
+/*Used to store all elements on the your library page*/
 #your_library_content{
   height:600px; 
   grid-template-columns: repeat(10, 10%);
   grid-template-rows: 60px 200px 100px 100px 100px;
   display: grid;
 }
-
+/*stores the tables used to display data*/
 .music_data_div{
   height:600px;
-  border: 5px solid black;
+  background-color: #080808;
   grid-row: 4/5;
   grid-column: 3/10;
   overflow: auto;
+  color:white;
 }
-
+/*styling the sidebar*/
 .sidebar{
   grid-row-start: 2;
   grid-row-end: 5;
   grid-column: 1/2;
   height:500px;
   width:150px;
-  border: 5px solid black;
+  background-color: #080808;
 }
-
+/*styling the playlist image*/
 .image{
   width: 250px;
   height:250px;
   grid-row: 2/3;
   grid-column: 3/4;
-  border: 5px solid black;
+  background-color: #080808;
 }
-
+/*styling the playlist details section*/
 .playlist_details{
   width: 250px;
   height:100px;
   margin-top: 100px;
   grid-row: 2/3;
   grid-column: 5/6;
-  border: 5px solid black;
+  background-color: #080808;
 }
-
+/*styling the popup login form*/
 .login_box{
   width: 320px;
   height: 420px;
-  background-color: black;
+  background-color: #080808;
   color: white;
   top: 50%;
   left: 50%;
@@ -290,6 +287,7 @@ th{
   font-size: 18px;
   cursor: pointer;
 }
+/*styling the modal - stores the login box*/
 .modal {
   display: none; /* Hidden by default */
   position: fixed; /* Stay in place */
@@ -329,3 +327,81 @@ th{
   color: red;
   cursor: pointer;
 }
+
+
+@media only screen and (max-width:800px){
+
+  
+  body{
+    background-color:green;
+  }
+  
+  .grid {
+    grid-template-rows:60px 240px 500px 130px;
+  }
+  
+  .mainlinks {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .mainlinks li {
+    display: block;
+    text-align: center;
+ 
+  }
+  
+  .mainlinks li a{
+    width: 100%;
+    padding: 20.5px 0;
+ 
+  }
+  
+  .dropbtn {
+    width: 100%;
+  }
+  
+  .dropdown {
+    display: block;
+  }
+  
+  .dropdown-content a:hover {
+    width: 100%;
+  }
+  
+  .content{
+    display:grid;
+    background-color:#eee;
+    margin: 40px 40px 50px 40px;
+    padding: 20px;
+    grid-column:1/9;
+    grid-row: 3/5;
+    font-size:15px;
+    overflow:auto;
+    height:100%;
+  }
+  
+    .content img{
+    margin-left: auto;
+    margin-right: auto;
+    width: 30%;
+    width:60%;
+    padding-top:10px;
+  }
+
+}
+
+@media only screen and (min-width:800px) {
+  
+  .mainlinks li{
+    float:left;
+  }
+  
+}
+
+
+
+
+
+
