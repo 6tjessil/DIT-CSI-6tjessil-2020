@@ -19,38 +19,8 @@ session_start();
         header("location: index.php");
     } else {
         $error = "Your login name or password is invalid";
+        header("location: index.php");
     }
     }
 ?>
 
-<!DOCTYPE html 5>
-<html xmlns="http://www.w3.org/1999/xhtml">
-
-<head>
-  <title>TJessil</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <link rel="stylesheet" href="style.css">
-  <script src="script.js"></script>
-</head>
-
-<body>
-  <?php
-  require("nav.php")
-  ?>
-  <!-- The Modal -->
-  <div id="id01" class="modal">
-    <div id = "login_modal">
-      <span onclick="document.getElementById('id01').style.display='none'"class="close" title="Close Modal">&times;</span>
-      <h1>Login</h1>
-      <form action="" method="post" id="login">
-        <p>Username</p><input type="text" name="username" id="box" placeholder="Please enter a username" /><br />
-        <p>Password</p><input type="password" name="password" id="box" placeholder="Please enter a password" /><br />
-        <input type="submit" value="Login"/><br/>
-      </form>  
-    </div>
-  </div>
-</body>
-
-</html>

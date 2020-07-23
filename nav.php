@@ -22,7 +22,10 @@ if(isset($_SESSION['login_user'])){?>
     <div class="mainlinks">
         <li><a href="index.php">Home</a></li>
         <li><a href="form.php">Contact</a></li>
-        <li><button onclick="document.getElementById('id01').style.display='block'">Login</button></li>
+        <li><button onclick="document.getElementById('id01').style.display='block'" id = "loginbtn">Login</button></li>
+        <li><button onclick="document.getElementById('id02').style.display='block'" id = "loginbtn">Sign Up</button></li>
     </div>
-</nav><?php
+</nav>
+
+<?php
 }?>
