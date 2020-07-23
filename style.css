@@ -1,7 +1,7 @@
 /*Style sheet*/
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto&family=Varela+Round&display=swap');
-
+/*MAIN CONTENT*/
 *{
   margin:0;
   padding:0;
@@ -10,7 +10,7 @@
 body{
   font-family:arial;
 }
-
+/*MAIN NAVIGATION*/
 nav { /*Nav bar */
   height: 61px;
   grid-column:1/9;
@@ -36,7 +36,7 @@ nav { /*Nav bar */
   font-family: 'Varela Round';
   background-color:black;
   margin-left:auto;
-  width:450px;
+  width:500px;
 }
 
 .mainlinks li a{ 
@@ -69,7 +69,6 @@ color: #111;
   cursor: pointer;
 }
 
-/* The container <div> - needed to position the dropdown content */
 .dropdown {
   position: relative;
   display: inline-block;
@@ -113,6 +112,15 @@ color: #111;
   background-color: #f1f1f1;
   color: #111;
 }
+/*mUSIC DATA DIV CONTENT*/
+
+.data{
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  height:100%;
+  overflow: auto;
+}
 
 table{
    border-collapse: collapse;
@@ -138,6 +146,15 @@ tr:nth-child(odd){
 th{
   height:50px;
   width:100px;
+  position: static;
+}
+
+#queryheader h1{
+  margin-left: auto;
+  margin-right: auto;
+  width:480px;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
 /* Style the tab */
@@ -198,15 +215,17 @@ th{
 .grid-content{
   background-color: green;
 }
+/*STYLING YOUR LIBRARY PAGE*/
+
 #your_library_content{
   height:600px; 
   grid-template-columns: repeat(10, 10%);
-  grid-template-rows: auto;
+  grid-template-rows: 60px 200px 100px 100px 100px;
   display: grid;
 }
 
 .music_data_div{
-  height:225px;
+  height:600px;
   border: 5px solid black;
   grid-row: 4/5;
   grid-column: 3/10;
@@ -239,5 +258,87 @@ th{
   border: 5px solid black;
 }
 
+/*lOGIN PAGE FORM*/
+#login_modal{
+  background-color:black;
+  opacity: 0.7;
+  color: white;
+  height: 420px;
+  width: 320px;
+  top:50%;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%,-50%);
+  box-sizing: border-box; 
+  padding: 70px 30px;
+}
+
+h1{
+  margin: 0;
+  padding: 0 0 20px;
+  text-align: center;
+  font-size: 30px;
+}
+
+#login_modal p{
+  margin: 0;
+  padding: 0;
+  font-weight: bold;
+}
+
+#login_modal input{
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+#login_modal input[type = "text"], input[type = "password"]{
+  border: none;
+  border-bottom: 1px solid #fff;
+  background: transparent;
+  outline: none;
+  height: 40px;
+  color: #fff;
+  font-size: 16px; 
+}
+
+#login_modal input[type = "submit"]{
+  border: none;
+  outline: none;
+  height: 40px;
+  background:#305ae4;
+  color:white;
+  font-size: 18px;
+}
+
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  padding-top: 60px;
+}
 
 
+/* The Close Button */
+.close {
+  /* Position it in the top right corner outside of the modal */
+  position: absolute;
+  right: 2%;
+  top: 0;
+  color: white;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+/* Close button on hover */
+.close:hover,
+.close:focus {
+  color: red;
+  cursor: pointer;
+}

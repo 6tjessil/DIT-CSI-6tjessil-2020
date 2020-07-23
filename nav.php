@@ -22,7 +22,7 @@ if(isset($_SESSION['login_user'])){?>
     <div class="mainlinks">
         <li><a href="index.php">Home</a></li>
         <li><a href="form.php">Contact</a></li>
-        <li><a href="login.php">Login</a></li>
+        <li><button onclick="document.getElementById('id01').style.display='block'">Login</button></li>
     </div>
 </nav><?php
 }?>
