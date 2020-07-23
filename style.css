@@ -114,8 +114,8 @@ color: #111;
   color: #111;
 }
 
-.content{
-  width: 80%;
+.data{
+  width: 60%;
   margin-left: auto;
   margin-right: auto;
   height:450px;
@@ -125,11 +125,13 @@ color: #111;
 table{
    border-collapse: collapse;
    width: 100%;
-   text-align: left; 
+   text-align: center; 
+   padding:10px;
 }
 
 tr{
   color: black;
+  height:50px;
 }
 
 td{
@@ -139,6 +141,11 @@ td{
 
 tr:nth-child(odd){
   background-color:lightgray; 
+}
+
+th{
+  height:50px;
+  width:100px;
 }
 
 #queryheader h1{
