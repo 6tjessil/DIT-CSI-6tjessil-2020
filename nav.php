@@ -6,13 +6,7 @@ if(isset($_SESSION['login_user'])){?>
     <div class="mainlinks">
         <li><a href="index.php">Home</a></li>
         <li><a href="form.php">Contact</a></li>
-        <div class="dropdown">
-            <button class="dropbtn">Queries</button>
-            <div class="dropdown-content">
-                <a href="query_1.php">Query 1</a>
-                <a href="query_2.php">Query 2</a>
-            </div>
-        </div>
+        <li><a href="your_library.php">Your Library</a></li>
         <div class="dropdown">
             <button class="dropbtn">Account</button>
             <div class="dropdown-content">

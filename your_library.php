@@ -14,7 +14,7 @@
   require("nav.php")
   ?>
   <div id="queryheader">
-    <h1>Cypher to Room</h1>
+    <h1>Cypher to Room</h1> 
   </div>
   <div class="content">
     <table>
