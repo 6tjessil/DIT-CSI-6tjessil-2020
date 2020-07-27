@@ -33,13 +33,13 @@ nav { /*Nav bar */
   width:600px;
 }
 
-.mainlinks li a{ 
+.mainlinks li a{
   display:inline-block;
   text-decoration:none;
   color:white;
   padding: 20.5px;
 }
-.mainlinks li{ 
+.mainlinks li{
   list-style:none;
   background-color:#080808;
   display:inline-block;
@@ -111,7 +111,7 @@ color: black;
 table{
    border-collapse: collapse;
    width: 100%;
-   text-align: center; 
+   text-align: center;
    padding:10px;
 }
 
@@ -126,7 +126,7 @@ td{
 }
 
 tr:nth-child(odd){
-  background-color:#141414; 
+  background-color:#141414;
 }
 
 th{
@@ -195,7 +195,7 @@ th{
 }
 /*Used to store all elements on the your library page*/
 #your_library_content{
-  height:600px; 
+  height:600px;
   grid-template-columns: repeat(10, 10%);
   grid-template-rows: 60px 200px 100px 100px 100px;
   display: grid;
@@ -328,48 +328,87 @@ th{
   cursor: pointer;
 }
 
+.hp_container #hp_title{
+  width: 30%;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50px;
+  font-size: 32px;
+}
+
+.hp_container #hp_images{
+  width:950px;
+  height: auto;
+  margin-left:auto;
+  margin-right: auto;
+  margin-top: 40px;
+}
+
+.row {margin: 0;}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.column{
+  float: left;
+  width: 30%;
+  padding-left: 30px;
+}
+
+.hp_image_holder{
+  background-color: white;
+  height: 280px;
+  width: 280px;
+  text-align: center;
+}
+
+
 
 @media only screen and (max-width:800px){
 
-  
+
   body{
     background-color:green;
   }
-  
+
   .grid {
     grid-template-rows:60px 240px 500px 130px;
   }
-  
+
   .mainlinks {
     list-style-type: none;
     margin: 0;
     padding: 0;
   }
-  
+
   .mainlinks li {
     display: block;
     text-align: center;
- 
+
   }
-  
+
   .mainlinks li a{
     width: 100%;
     padding: 20.5px 0;
- 
+
   }
-  
+
   .dropbtn {
     width: 100%;
   }
-  
+
   .dropdown {
     display: block;
   }
-  
+
   .dropdown-content a:hover {
     width: 100%;
   }
-  
+
   .content{
     display:grid;
     background-color:#eee;
@@ -381,27 +420,18 @@ th{
     overflow:auto;
     height:100%;
   }
-  
-    .content img{
+
+  .content img{
     margin-left: auto;
     margin-right: auto;
     width: 30%;
     width:60%;
     padding-top:10px;
   }
-
-}
-
-@media only screen and (min-width:800px) {
-  
-  .mainlinks li{
-    float:left;
+  .column {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
   }
-  
+
 }
-
-
-
-
-
-
