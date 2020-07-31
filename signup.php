@@ -7,8 +7,8 @@
 
     $hashpass = hash("sha256", $password);
 
-    $checkquery = "SELECT * FROM user WHERE username = '$username'"; //Checks if username exsits
-    $insertquery = "INSERT INTO user(`username`, `password`) VALUES ('$username','$hashpass')"; //Inserts new user data
+    $checkquery = "SELECT * FROM user WHERE UserName = '$username'"; //Checks if username exsits
+    $insertquery = "INSERT INTO user(`UserName`, `Password`) VALUES ('$username','$hashpass')"; //Inserts new user data
 
     $result_check = mysqli_query($con, $checkquery); //Running $insertquery
     $count = mysqli_num_rows($result_check); //Counts number of rows

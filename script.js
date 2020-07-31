@@ -19,17 +19,16 @@ function openOption(evt, optionName) {
   evt.currentTarget.className += " active";
 }
 
-
 document.getElementById("loginbtn").addEventListener("click", loginform);
 
 function loginform(){
-  document.getElementById('login_form').style.display='block'
+  document.getElementById('login_form').style.display='block';
 }
 
 document.getElementById("signupbtn").addEventListener("click", signupform);
 
 function signupform(){
-  document.getElementById('signup_form').style.display='block'
+  document.getElementById('signup_form').style.display='block';
 }
 
 $(function(){
