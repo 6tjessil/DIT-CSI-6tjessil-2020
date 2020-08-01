@@ -74,5 +74,28 @@ $(function(){
   })
 })
 
+$(function(){
+  $("#contact_form").submit(function(e){
+    e.preventDefault()
+    name = $("#name").val()
+    email = $("#email").val()
+    subject = $("#subject").val()
+    $.ajax({
+      type:"POST",
+      url:"mail-test.php",
+      data:{name:newusername, email:email, subject:subject},
+      success: function(data){
+        if (data.trim() != ""){
+          document.getElementById("contact_message").innerHTML = data
+        }
+        else{
+          document.getElementById("contact_message").innerHTML = data
+        }
+      }
+    })
+  })
+})
+
+
 
 

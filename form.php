@@ -24,10 +24,13 @@
 
   <div id="contact_form" >
   <div class = "contact_box">
+    <p name = "contact_message"></p>
     <h1>Contact Us</h1>
-    <form method = "GET">
+    <form method = "POST" action="mail-test.php">
       <p>Name</p>
       <input type = "text" name = "name" placeholder="Please your name" id="name" required>
+      <p>Email</p>
+      <input type = "text" name = "email" placeholder="Please your email" id="email" required>
       <p>Subject</p>
       <textarea name = "subject" placeholder="Please enter your question" id = "query" required></textarea>
       <input type = "submit" name = "submit" value= "Submit">
