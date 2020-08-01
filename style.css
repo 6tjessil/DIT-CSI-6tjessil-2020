@@ -288,14 +288,13 @@ th{
   cursor: pointer;
 }
 
-
 /*styling the popup login form*/
 .contact_box{
   margin-left: auto;
   margin-right: auto;
   width: 500px;
   height: 650px;
-  background-color: white;
+  background-color: #080808;
   color: white;
   box-sizing: border-box;
   padding: 20px 30px 10px 30px;
