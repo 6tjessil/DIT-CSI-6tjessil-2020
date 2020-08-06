@@ -15,7 +15,8 @@ if(isset($_SESSION['login_user'])){?>
             </div>
         </div>
     </div>
-</nav><?php
+</nav>
+<?php
 } else{?>
     <!--Nav code when user is not signed in-->
 <nav>
