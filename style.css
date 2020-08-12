@@ -15,14 +15,13 @@ body{
 
 
 nav { /*Nav bar */
-  height: 61px;
   width:100%;
   background-color: #080808;
+  grid-row: 1;
 }
 
 .nav-title {
   height: 100%;
-  grid-column:2/9;
   padding-right:10px;
 }
 
@@ -134,59 +133,62 @@ th{
   width:100px;
 }
 
-/* This is used to style the tabs that are used to hold admin actions such as delete and update. */
-.tab {
-  overflow: hidden;
-  border: 1px solid #ccc;
-  background-color: #f1f1f1;
-  width:400px;
-  padding-left: 100px;
-  padding-right: 100px;
+.tab{
+  border: 3px solid #cccccc;
+  width:75%;
+  display: flex;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 50px;
+  margin-top:50px;
+  height:450px;
 }
 
-/* Style the buttons that are used to open the tab content */
-.tab button {
-  background-color: inherit;
-  float: left;
+.tab_sidebar{
+  width:250px;
+  flex-shrink: 0;
+  background-color: #cccccc;
+  height: 100%;
+}
+
+.tab_button{
+  display:block;
+  font-size: 16px;
+  padding: 20px;
+  background: #eeeeee;
   border: none;
-  outline: none;
+  width:100%;
+  outline:none;
   cursor: pointer;
-  padding: 14px 16px;
-  transition: 0.3s;
-  font-size: 20px;
 }
 
-/* Change background color of buttons on hover */
-.tab button:hover {
-  background-color: #ddd;
+.tab_button:active{
+  background-color: #dddddd;
 }
 
-/* Create an active/current tablink class */
-.tab button.active {
-  background-color: #ccc;
+.tab_button:not(:last-of-type){
+  border-bottom: 1px solid #cccccc;
 }
 
-/* Style the tab content */
-.tabcontent {
+.tab_button--active{
+  font-weight: bold;
+  border-right: 2px solid #009897;
+  background-color: #dddddd;
+}
+
+.tab_content{
+  padding: 15px;
+  font-size-adjust: 0.8rem;
   display: none;
-  border: 1px solid #ccc;
-  border-top: none;
-  width: 600px;
-  margin-left: auto;
-  margin-right: auto;
-  height: auto;
+  overflow: auto;
+  width:100%;
 }
 
-.tabcontent table tr th{
-  padding:10px;
-  font-size: 20px;
+.tab_content--active{
+  display:block;
 }
 
-.tabcontent table tr td{
-  padding:10px;
+.tab_content > :first-child{
+  margin-top: 0;
 }
 
 /*Setting up a grid system*/
@@ -196,8 +198,8 @@ th{
 /*Used to store all elements on the your library page*/
 #your_library_content{
   height:600px;
-  grid-template-columns: repeat(10, 10%);
-  grid-template-rows: 60px 200px 100px 100px 100px;
+  grid-template-columns: 10% 90px 20% 50px 15% 10% 10% 15%;
+  grid-template-rows: 60px 250px 60px 100px 100px;
   display: grid;
 }
 /*stores the tables used to display data*/
@@ -205,36 +207,33 @@ th{
   height:600px;
   background-color: #080808;
   grid-row: 4/5;
-  grid-column: 3/10;
+  grid-column: 3/9;
   overflow: auto;
   color:white;
 }
 /*styling the sidebar*/
 .sidebar{
-  grid-row-start: 2;
-  grid-row-end: 5;
+  grid-row: 2/span 2;
   grid-column: 1/2;
   height:500px;
-  width:150px;
   background-color: #080808;
 }
 /*styling the playlist image*/
 .image{
-  width: 250px;
-  height:250px;
   grid-row: 2/3;
-  grid-column: 3/4;
+  grid-column: 3;
   background-color: #080808;
 }
 /*styling the playlist details section*/
 .playlist_details{
-  width: 250px;
-  height:100px;
   margin-top: 100px;
   grid-row: 2/3;
   grid-column: 5/6;
   background-color: #080808;
 }
+
+
+
 /*styling the popup login form*/
 .login_box{
   width: 320px;
@@ -288,7 +287,7 @@ th{
   cursor: pointer;
 }
 
-/*styling the popup login form*/
+/*styling the contact form*/
 .contact_box{
   margin-left: auto;
   margin-right: auto;
@@ -344,7 +343,6 @@ th{
   padding: 5px;
 
 }
-
 .contact_box input[type = "submit"]{
   width: 100%;
   border: none;
@@ -356,8 +354,66 @@ th{
   cursor: pointer;
 }
 
+/*styling the contact form*/
+.input_box{
+  margin-left: auto;
+  margin-right: auto;
+  width: 400px;
+  height: 100%;
+  background-color: #080808;
+  color: white;
+  box-sizing: border-box;
+  padding: 20px 30px 10px 30px;
+}
 
-/*styling the modal - stores the login box*/
+.input_box h1{
+  margin: 0;
+  padding: 0 0 20px;
+  text-align: center;
+  font-size: 30px;
+}
+
+.input_box p{
+  margin: 0;
+  padding: 0;
+  font-weight: bold;
+}
+
+.input_box p[id="input_box_message"]{
+  color:re d;
+}
+
+.input_box input{
+  margin-bottom: 20px;
+}
+
+.input_box input[name = "input1"],input[name = "input2"]{
+  border: none;
+  background: white;
+  outline: none;
+  height: 40px;
+  color: black;
+  font-size: 16px;
+  padding-left: 5px;
+  margin-top: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+
+.input_box input[type = "submit"]{
+  width: 100%;
+  border: none;
+  outline: none;
+  height: 45px;
+  color:white;
+  background-color: #274196;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+
+/*styling the modal - stores the login and sign up boxes*/
 .modal {
   display: none; /* Hidden by default */
   position: fixed; /* Stay in place */
@@ -398,6 +454,7 @@ th{
   cursor: pointer;
 }
 
+/*Styling the home page*/
 .hp_container #hp_title{
   width: 30%;
   text-align: center;
@@ -437,44 +494,40 @@ th{
 }
 
 @media only screen and (max-width:800px){
-  .grid {
-    grid-template-rows:60px 240px 500px 130px;
-  }
-
   .mainlinks {
     list-style-type: none;
     margin: 0;
     padding: 0;
     width: 100%;
-    z-index: 1;
   }
-
+  
   .mainlinks li {
     display: block;
     text-align: center;
-    z-index: 1;
-
   }
-
+  
   .mainlinks li a{
     width: 100%;
-    padding: 20.5px ;
-    z-index: 1;
-    background-color: #080808;
+    padding: 20.5px 0;
+ 
   }
-
+  
   .dropbtn {
     width: 100%;
   }
-
+  
   .dropdown {
     display: block;
   }
-
+  
   .dropdown-content a:hover {
     width: 100%;
   }
 
+  .hp_container{
+    margin-left: auto;
+    margin-right: auto;
+  }
   .content{
     display:grid;
     background-color:#eee;
@@ -489,7 +542,6 @@ th{
     margin-left: auto;
     margin-right: auto;
     width: 30%;
-    width:60%;
     padding-top:10px;
   }
   .column {
@@ -499,3 +551,4 @@ th{
   }
 
 }
+

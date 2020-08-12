@@ -16,16 +16,8 @@ if(isset($_SESSION['login_user'])){?>
         </div>
     </div>
 </nav>
-<style>
-.mainlinks{
-  font-family: 'Varela Round';
-  background-color:#080808;
-  margin-left:auto;
-  width:580px;
-}
-</style>
 <?php
-} else{?>
+}else{?>
     <!--Nav code when user is not signed in-->
 <nav>
     <div class="mainlinks">
@@ -35,16 +27,7 @@ if(isset($_SESSION['login_user'])){?>
         <li><a href="#" id = "signupbtn">Sign Up</a></li>
     </div>
 </nav>
-<style>
-.mainlinks{
-  font-family: 'Varela Round';
-  background-color:#080808;
-  margin-left:auto;
-  width:450px;
-}
-</style>
-<?php
-}?>
+<?php }?>
 
 <!--<div class = "theme-switch-wrapper">
         <label class="theme-switch" for="checkbox">

@@ -1,5 +1,5 @@
 <!--Contact page-->
-<!DOCTYPE html>
+<!--<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -10,11 +10,11 @@
 </head>
 
 <body>
-  <?php
+  <php
   require("nav.php")
   ?>
   contact page
-  <?php
+  <php
   require("login_form.php");
   require('signup_form.php');
   ?>
@@ -40,4 +40,4 @@
 
 </body>
 
-</html>
+</html>-->
