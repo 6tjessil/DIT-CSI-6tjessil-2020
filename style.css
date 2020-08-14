@@ -1,7 +1,7 @@
 /*Style sheet*/
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto&family=Varela+Round&display=swap');
-
+/*Setting up site*/
 *{
   margin:0;
   padding:0;
@@ -9,58 +9,49 @@
 
 body{
   font-family:arial;
+  background-color: #111010;
+  color:white;
 }
 
 nav { /*Nav bar */
-  height: 61px;
-  grid-column:1/9;
-  background-color: black;
+  width:100%;
+  background-color: #080808;
+  grid-row: 1;
 }
 
 .nav-title {
   height: 100%;
-  grid-column:2/9;
-  background-color:red;
   padding-right:10px;
-}
-
-.nav-title p {
-  float:left;
-  font-size:30px;
-  padding:10px 0 10px 10px;
-  font-family:arial;
-  color:white;
 }
 
 .mainlinks{
   font-family: 'Varela Round';
-  background-color:black;
+  background-color:#080808;
   margin-left:auto;
-  width:420px;
+  width:600px;
 }
 
-.mainlinks li a{ 
+.mainlinks li a{
   display:inline-block;
   text-decoration:none;
-  color: white;
+  color:white;
   padding: 20.5px;
 }
-.mainlinks li{ 
+.mainlinks li{
   list-style:none;
-  background-color:black;
+  background-color:#080808;
   display:inline-block;
   text-decoration:none;
 }
 
 .mainlinks a:hover{
-background-color: #f1f1f1;
-color: #111;
+background-color: #ddd;
+color: black;
 }
-
 
 /* Style The Dropdown Button */
 .dropbtn {
-  background-color: black;
+  background-color: #080808;
   color: white;
   font-family: 'Varela Round';
   padding: 20.5px;
@@ -81,7 +72,7 @@ color: #111;
   font-family: 'Varela Round';
   display: none;
   position: absolute;
-  background-color: #111;
+  background-color: #080808;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
   width: 100%;
@@ -101,7 +92,7 @@ color: #111;
 }
 
 /* Change color of dropdown links on hover */
-.dropdown-content a:hover {background-color: #f1f1f1;color: #111;width:73%;}
+.dropdown-content a:hover {background-color: #f1f1f1;color: #080808;width:73%;}
 
 /* Show the dropdown menu on hover */
 .dropdown:hover .dropdown-content {
@@ -110,26 +101,21 @@ color: #111;
 
 /* Change the background color of the dropdown button when the dropdown content is shown */
 .dropdown:hover .dropbtn {
-  background-color: #f1f1f1;
-  color: #111;
+  background-color: #ddd;
+  color: black;
 }
 
-.content{
-  width: 80%;
-  margin-left: auto;
-  margin-right: auto;
-  height:450px;
-  overflow: auto;
-}
-
+/*This is used to setup the way the tables will look (this is used to display data)*/
 table{
    border-collapse: collapse;
    width: 100%;
-   text-align: left; 
+   text-align: center;
+   padding:10px;
 }
 
 tr{
-  color: black;
+  color: white;
+  height:50px;
 }
 
 td{
@@ -138,72 +124,430 @@ td{
 }
 
 tr:nth-child(odd){
-  background-color:lightgray; 
+  background-color:#141414;
 }
 
-#queryheader h1{
+th{
+  height:50px;
+  width:100px;
+}
+
+.tab{
+  border: 3px solid #cccccc;
+  width:75%;
+  display: flex;
   margin-left: auto;
   margin-right: auto;
-  width:480px;
-  padding-top: 20px;
-  padding-bottom: 20px;
+  margin-top:50px;
+  height:450px;
 }
 
-/* Style the tab */
-.tab {
-  overflow: hidden;
-  border: 1px solid #ccc;
-  background-color: #f1f1f1;
-  width:400px;
-  padding-left: 100px;
-  padding-right: 100px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 50px;
+.tab_sidebar{
+  width:250px;
+  flex-shrink: 0;
+  background-color: #cccccc;
+  height: 100%;
 }
 
-/* Style the buttons that are used to open the tab content */
-.tab button {
-  background-color: inherit;
-  float: left;
+.tab_button{
+  display:block;
+  font-size: 16px;
+  padding: 20px;
+  background: #eeeeee;
   border: none;
-  outline: none;
+  width:100%;
+  outline:none;
   cursor: pointer;
-  padding: 14px 16px;
-  transition: 0.3s;
-  font-size: 20px;
 }
 
-/* Change background color of buttons on hover */
-.tab button:hover {
-  background-color: #ddd;
+.tab_button:active{
+  background-color: #dddddd;
 }
 
-/* Create an active/current tablink class */
-.tab button.active {
-  background-color: #ccc;
+.tab_button:not(:last-of-type){
+  border-bottom: 1px solid #cccccc;
 }
 
-/* Style the tab content */
-.tabcontent {
+.tab_button--active{
+  font-weight: bold;
+  border-right: 2px solid #009897;
+  background-color: #dddddd;
+}
+
+.tab_content{
+  padding: 15px;
+  font-size-adjust: 0.8rem;
   display: none;
-  border: 1px solid #ccc;
-  border-top: none;
-  width: 600px;
-  margin-left: auto;
-  margin-right: auto;
-  height: auto;
+  overflow: auto;
+  width:100%;
 }
 
-.tabcontent table tr th{
-  padding:10px;
-  font-size: 20px;
+.tab_content--active{
+  display:block;
 }
 
-.tabcontent table tr td{
-  padding:10px;
+.tab_content > :first-child{
+  margin-top: 0;
 }
 
+/*Setting up a grid system*/
 .grid-content{
   background-color: green;
 }
+/*Used to store all elements on the your library page*/
+#your_library_content{
+  height:600px;
+  grid-template-columns: 10% 90px 20% 50px 15% 10% 10% 15%;
+  grid-template-rows: 60px 250px 60px 100px 100px;
+  display: grid;
+}
+/*stores the tables used to display data*/
+.music_data_div{
+  height:600px;
+  background-color: #080808;
+  grid-row: 4/5;
+  grid-column: 3/9;
+  overflow: auto;
+  color:white;
+}
+/*styling the sidebar*/
+.sidebar{
+  grid-row: 2/span 2;
+  grid-column: 1/2;
+  height:500px;
+  background-color: #080808;
+}
+/*styling the playlist image*/
+.image{
+  grid-row: 2/3;
+  grid-column: 3;
+  background-color: #080808;
+}
+/*styling the playlist details section*/
+.playlist_details{
+  margin-top: 100px;
+  grid-row: 2/3;
+  grid-column: 5/6;
+  background-color: #080808;
+}
+
+
+
+/*styling the popup login form*/
+.login_box{
+  width: 320px;
+  height: 420px;
+  background-color: #080808;
+  color: white;
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  box-sizing: border-box;
+  padding: 70px 30px;
+}
+
+.login_box h1{
+  margin: 0;
+  padding: 0 0 20px;
+  text-align: center;
+  font-size: 30px;
+}
+
+.login_box p{
+  margin: 0;
+  padding: 0;
+  font-weight: bold;
+}
+
+.login_box input{
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.login_box input[type = "text"], input[type = "password"]{
+  border: none;
+  border-bottom: 1px solid #fff;
+  background: transparent;
+  outline: none;
+  height: 40px;
+  color: #fff;
+  font-size: 16px;
+}
+
+.login_box input[type = "submit"]{
+  width: 100%;
+  border: none;
+  outline: none;
+  height: 45px;
+  color:white;
+  background-color: #274196;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+/*styling the contact form*/
+.contact_box{
+  margin-left: auto;
+  margin-right: auto;
+  width: 500px;
+  height: 650px;
+  background-color: #080808;
+  color: white;
+  box-sizing: border-box;
+  padding: 20px 30px 10px 30px;
+}
+
+.contact_box h1{
+  margin: 0;
+  padding: 0 0 20px;
+  text-align: center;
+  font-size: 30px;
+}
+
+.contact_box p{
+  margin: 0;
+  padding: 0;
+  font-weight: bold;
+}
+
+.contact_box p[name = "message"]{
+  text-align: center;
+}
+
+.contact_box input{
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.contact_box input[name = "name"],input[name = "email"]{
+  border: none;
+  background: white;
+  outline: none;
+  height: 40px;
+  color: black;
+  font-size: 16px;
+  padding-left: 5px;
+  margin-top: 10px;
+}
+
+.contact_box textarea{
+  border: none;
+  resize: none;
+  width: 430px;
+  height: 200px;
+  margin-top: 10px;
+  margin-bottom: 15px;
+  font-size: 16px;
+  padding: 5px;
+
+}
+.contact_box input[type = "submit"]{
+  width: 100%;
+  border: none;
+  outline: none;
+  height: 45px;
+  color:white;
+  background-color: #274196;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+/*styling the contact form*/
+.input_box{
+  margin-left: auto;
+  margin-right: auto;
+  width: 400px;
+  height: 100%;
+  background-color: #080808;
+  color: white;
+  box-sizing: border-box;
+  padding: 20px 30px 10px 30px;
+}
+
+.input_box h1{
+  margin: 0;
+  padding: 0 0 20px;
+  text-align: center;
+  font-size: 30px;
+}
+
+.input_box p{
+  margin: 0;
+  padding: 0;
+  font-weight: bold;
+}
+
+.input_box p[id="input_box_message"]{
+  color:re d;
+}
+
+.input_box input{
+  margin-bottom: 20px;
+}
+
+.input_box input[name = "input1"],input[name = "input2"]{
+  border: none;
+  background: white;
+  outline: none;
+  height: 40px;
+  color: black;
+  font-size: 16px;
+  padding-left: 5px;
+  margin-top: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+
+.input_box input[type = "submit"]{
+  width: 100%;
+  border: none;
+  outline: none;
+  height: 45px;
+  color:white;
+  background-color: #274196;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+
+/*styling the modal - stores the login and sign up boxes*/
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  padding-top: 60px;
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 5px auto; /* 15% from the top and centered */
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close {
+  /* Position it in the top right corner outside of the modal */
+  position: absolute;
+  right: 20px;
+  top: 5px;
+  color: white;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+/* Close button on hover */
+.close:hover,
+.close:focus {
+  color: red;
+  cursor: pointer;
+}
+
+/*Styling the home page*/
+.hp_container #hp_title{
+  width: 30%;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50px;
+  font-size: 32px;
+}
+
+.hp_container #hp_images{
+  width:950px;
+  height: auto;
+  margin-left:auto;
+  margin-right: auto;
+  margin-top: 40px;
+}
+
+.row {margin: 0;}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.column{
+  float: left;
+  width: 30%;
+  padding-left: 30px;
+}
+
+.hp_image_holder{
+  background-color: white;
+  height: 280px;
+  width: 280px;
+  text-align: center;
+}
+
+@media only screen and (max-width:800px){
+  .mainlinks {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+  }
+  
+  .mainlinks li {
+    display: block;
+    text-align: center;
+  }
+  
+  .mainlinks li a{
+    width: 100%;
+    padding: 20.5px 0;
+ 
+  }
+  
+  .dropbtn {
+    width: 100%;
+  }
+  
+  .dropdown {
+    display: block;
+  }
+  
+  .dropdown-content a:hover {
+    width: 100%;
+  }
+
+  .hp_container{
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .content{
+    display:grid;
+    background-color:#eee;
+    margin: 40px 40px 50px 40px;
+    padding: 20px;
+    font-size:15px;
+    overflow:auto;
+    height:100%;
+  }
+
+  .content img{
+    margin-left: auto;
+    margin-right: auto;
+    width: 30%;
+    padding-top:10px;
+  }
+  .column {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+  }
+
+}
+

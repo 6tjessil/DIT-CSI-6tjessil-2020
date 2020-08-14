@@ -1,5 +1,5 @@
 
-<?php 
+<?php
     $username = $_POST['Username'];
     $password = $_POST['Password'];
 
@@ -7,7 +7,7 @@
         $host = 'localhost';
         $dbUsername = 'root';
         $dbPassword = 'dojustly01';
-        $dbName = 'staff';
+        $dbName = 'staff';  
 
         $conn = new mysqli($host,$dbUsername,$dbPassword, $dbName);
 
@@ -16,7 +16,7 @@
         }else{
             $SELECT  = "SELECT username FROM user WHERE username = ? Limit 1";
             $INSERT = "INSERT INTO user(username,password) VALUES(?,?)";
-            
+
             $stmt = $conn->prepare($SELECT);
             $stmt->bind_param("s",$username);
             $stmt->execute();
@@ -37,7 +37,7 @@
             $stmt->close();
             $conn->close();
         }
-    } else{ 
+    } else{
         echo "All field are required";
         die();
     }

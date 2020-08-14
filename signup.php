@@ -2,8 +2,8 @@
     require_once("connect.php");
     $output_message = null; //$error renamed - stores error message
 
-    $username = $_POST['input1'];
-    $password = $_POST['input2'];
+    $username = $_POST['UserName'];
+    $password = $_POST['Password'];
 
     $hashpass = hash("sha256", $password);
 
@@ -16,18 +16,13 @@
     if ($count > 0){ //Checks if number of rows is greater than 0
         $output_message = "Name already taken";
         echo $output_message;
-        
+
     } elseif (strlen($username) > 15){
         $output_message = "Username is too long";
         echo $output_message;
-    }
-    else{
+    }else{
         $result_query = mysqli_query($con,$insertquery);
-        //$output_message = "Registration Successful";
-        //echo $output_message;
+        $output_message = "Registration Successful";
+        echo $output_message;
     }
 ?>
-
-
-
-
