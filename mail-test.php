@@ -1,6 +1,6 @@
-<?php
+<!--<php
 
-require('conntact.php');
+require('contact.php');
 
 $name = $_POST['name'];
 $text = $_POST['body'];
@@ -25,4 +25,4 @@ if(mail($to,$subject,$body,$from)){
 }
 ?>
   </body>
-</html>
+</html>-->

@@ -1,57 +1,24 @@
-<!-- localhost/UseThis/05_DeleteUser.php-->
-
-<!DOCTYPE html>
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>DeleteUser</title>
-<link rel="stylesheet" type="text/css" href="Styles.css">
-</head>
-	<body>
-		<div id="container">
-			<div id="header">
-				<h1>Use this form to delete a user from the sql database</h1>
-			</div><!-- end of header -->
-			<div id="navigation">
-				<a href="00_connect.php">00_connect.php</a> 
-				<a href="01_UsersList.php">01_UsersList.php</a> 
-				<a href="02_UserListStyled.php">02_UserListStyled.php</a> 
-				<a href="03_UserListTable.php">03_UserListTable.php</a> 
-				<a href="04_AddUser.php">04_AddUser.php</a> 
-				<a href="05_DeleteUser.php">05_DeleteUser.php</a> 
-				<a href="06_UpdateUser.php">06_UpdateUser.php</a>
-			</div><!-- end of navigation -->
-			<div id="content">
-				<img src="Jellyfish.jpg" alt="Just another broken image link" title="An image for an images sake" width="560px" />
-				
-				 <form method="post" name="input" action="05_DeleteUser.php" > 
-				User Name:<br/> <input name="UserName" type="text"/><br/>
-				<input type="submit" name="submit" value="Delete" /> </form>
-				
-				<?php
+<?php
+session_start();
 					//connect.php (tells where to connect servername, username, password, dbaseName)
-					require_once('00_Connect.php');
-					print "<h3>Connected to server</h3>\n";
+					require_once('connect.php');
 					
-				$UserID = $_POST['UserName']; 
-					
+					$UserName = $_POST['input1']; 
+					if ($UserName != $_SESSION['login_user']){
 					//create a variable to store sql code for the 'Add Users' query					
-					$deletequery = "DELETE FROM users WHERE UserID = '$UserID'";
-
-					if (mysqli_query($con,$deletequery))
+					$deletequery = "DELETE FROM user WHERE UserName = '$UserName'";
+					$checkquery = "SELECT * FROM user WHERE UserName = '$UserName'"; //Checks if username exsits
+					$result_check = mysqli_query($con, $checkquery); 
+					$count = mysqli_num_rows($result_check);
+					if (!mysqli_query($con,$deletequery))
 					{
-					echo "<h3>Record deleted</h3>";
+						$output_message = "It Broke";
+						echo $output_message;
+					}elseif($count == 0){
+						$output_message = "Username doesn't exsit";
+						echo $output_message;
 					}
-					else
-					{
-					echo "<h3>Error deleting record:</h3> ";
-					}
+				}else{
+					echo "You can't delete your own user";
+				}
 				?>
-			</div><!-- end of content -->
-			<div id="footer">
-				<h2>The Add User page</h2>
-				<p>Tawa</p>
-			</div><!-- end of footer -->
-		</div><!-- end of container -->
-	</body>
-</html>

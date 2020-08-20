@@ -1,4 +1,3 @@
-<!--Contact page-->
 <!DOCTYPE html>
 <html lang="en">
 
