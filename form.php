@@ -1,9 +1,4 @@
-<<<<<<< Updated upstream
-<!--Contact page-->
-<!--<!DOCTYPE html>
-=======
 <!DOCTYPE html>
->>>>>>> Stashed changes
 <html lang="en">
 
 <head>
@@ -14,15 +9,11 @@
 </head>
 
 <body>
-  <php
+  <?php
   require("nav.php")
   ?>
   contact page
-<<<<<<< Updated upstream
-  <php
-=======
   <?php
->>>>>>> Stashed changes
   require("login_form.php");
   require('signup_form.php');
   ?>
