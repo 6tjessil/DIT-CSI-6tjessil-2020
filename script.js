@@ -41,6 +41,12 @@ function loginform(){
   document.getElementById('login_form').style.display='block';
 }
 }
+document.getElementById("darkmode").addEventListener("click", myFunction);
+
+function myFunction() {
+  var element = document.body;
+  element.classList.toggle("dark-mode");
+}
 
 $(function(){
   $("#login_form").submit(function(e){
@@ -108,7 +114,7 @@ $(function(){
 })
 
 $(function(){
-  $("#input_form").submit(function(e){
+  $("#newuser_form").submit(function(e){
     e.preventDefault()
     inputone = $("#input1").val()
     inputtwo = $("#input2").val()
@@ -118,10 +124,10 @@ $(function(){
       data:{input1:inputone, input2:inputtwo},
       success: function(data){
         if (data.trim() != ""){
-          document.getElementById("input_box_message").innerHTML = data
+          document.getElementById("newuser_box_message").innerHTML = data
         }
         else{
-          document.getElementById("input_box_message").innerHTML = data
+          document.getElementById("newuser_box_message").innerHTML = data
           window.location.reload()
         }
       }
@@ -130,7 +136,7 @@ $(function(){
 })
 
 $(function(){
-  $("#input_form2").submit(function(e){
+  $("#updateuser_form").submit(function(e){
     e.preventDefault()
     inputone = $("#changeinput1").val()
     inputtwo = $("#changeinput2").val()
@@ -140,7 +146,7 @@ $(function(){
       data:{input1:inputone, input2:inputtwo},
       success: function(data){
         if (data.trim() != ""){
-          document.getElementById("input_box_message2").innerHTML = data
+          document.getElementById("updateuser_box_message").innerHTML = data
         }
         else{
           window.location.reload()
@@ -151,7 +157,7 @@ $(function(){
 })
 
 $(function(){
-  $("#input_form3").submit(function(e){
+  $("#deleteuser_form").submit(function(e){
     e.preventDefault()
     inputone = $("#deleteinput").val()
     $.ajax({
@@ -160,7 +166,7 @@ $(function(){
       data:{input1:inputone},
       success: function(data){
         if (data.trim() != ""){
-          document.getElementById("input_box_message3").innerHTML = data
+          document.getElementById("deleteuser_box_message").innerHTML = data
         }
         else{
           window.location.reload()
@@ -169,5 +175,6 @@ $(function(){
     })
   })
 })
+
 
 

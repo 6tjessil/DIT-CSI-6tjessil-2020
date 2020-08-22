@@ -32,23 +32,28 @@
 			<div class="data">
 				<table>
 				<tr>
-					<th>Cypher</th>
-					<th>Room</th>
-					<th>Room</th>
-					<th>Room</th>
-					<th>Room</th>
-					<th>Room</th>
+					<th>Title</th>
+					<th>Artist</th>
+					<th>Album</th>
+					<th>Genre</th>
+					<th>Duration</th>
+					<th>Size</th>
 				</tr>
 				<?php
 				require_once("connect.php");
-				$query = "SELECT *
-							FROM teacher";
+				$query = "SELECT s.title, ar.artist, al.album, GROUP_CONCAT(DISTINCT g.genre SEPARATOR ', ') AS 'Genre', RIGHT (SEC_TO_TIME(s.duration), 5) AS 'Duration',  s.size 
+				FROM song AS s 
+				JOIN artist AS ar ON s.artist_id = ar.artist_id 
+				JOIN album AS al ON s.album_id = al.album_id
+				JOIN song_to_genre AS sg ON s.song_id = sg.song_id
+				JOIN genre AS g ON g.genre_id = sg.genre_id 
+				GROUP BY s.title DESC, ar.artist DESC";
 				$rs = mysqli_query($con, $query);
 				if ($rs) {
 					while ($row = mysqli_fetch_array($rs)) {
-					echo "<tr><td>" . $row['cypher'] . "</td><td>" . $row['surname'] . "</td>
-					<td>" . $row['christian'] . "</td><td>" . $row['form'] . "</td><td>" . $row['mentor'] . "</td>
-					<td>" . $row['role_id'] . "</td></tr>";
+					echo "<tr><td>" . $row['title'] . "</td><td>" . $row['artist'] . "</td>
+					<td>" . $row['album'] . "</td><td>" . $row['Genre'] . "</td><td>" . $row['Duration'] . "</td>
+					<td>" . $row['size'] . "</td></tr>";
 					}
 				}
 				?>

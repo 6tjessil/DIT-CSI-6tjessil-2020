@@ -7,6 +7,7 @@ if(isset($_SESSION['login_user'])){?>
                 <li><a href="index.php">Home</a></li>
                 <li><a href="your_library.php">Your Library</a></li>
                 <li><a href="form.php">Contact</a></li>
+                <li><a href="#" id = "darkmode">Theme   </a></li>
                 <div class="dropdown">
                     <button class="dropbtn">Hi <?php echo $_SESSION['login_user']; ?></button>
                     <div class="dropdown-content">
@@ -22,8 +23,6 @@ if(isset($_SESSION['login_user'])){?>
         
     <!--Nav code when user is not signed in-->
                         <?php }else{
-
-                        
                         ?>
 <nav>
     <div class="mainlinks">

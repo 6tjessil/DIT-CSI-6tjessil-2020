@@ -22,16 +22,34 @@
     <div class = "row">
       <div class = "column">
         <div class = "hp_image_holder">
+          <div class="image_container">
+            <img src="image.jpg" alt="Avatar" class="hp_image">
+             <div class="overlay">
+            <div class="text">Hello World</div>
+          </div>
+             </div>
         </div>
       </div>
 
       <div class = "column">
-        <div class = "hp_image_holder">
+      <div class = "hp_image_holder">
+          <div class="image_container">
+            <img src="image.jpg" alt="Avatar" class="hp_image">
+             <div class="overlay">
+            <div class="text">Hello World</div>
+          </div>
+             </div>
         </div>
       </div>
 
       <div class = "column">
-        <div class = "hp_image_holder">
+      <div class = "hp_image_holder">
+          <div class="image_container">
+            <img src="image.jpg" alt="Avatar" class="hp_image">
+             <div class="overlay">
+            <div class="text">Hello World</div>
+          </div>
+             </div>
         </div>
       </div>
     </div>

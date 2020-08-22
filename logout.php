@@ -1,4 +1,3 @@
-<!--Logout Page-->
 <?php
 session_start();
 if(isset($_SESSION['login_user'])){
@@ -9,3 +8,5 @@ else{
     echo"<script>location.href= 'index.php'</script>";
 }
 ?>
+
+

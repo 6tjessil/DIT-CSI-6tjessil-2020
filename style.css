@@ -133,7 +133,8 @@ th{
 }
 
 .tab{
-  border: 3px solid #cccccc;
+  border: 3px solid #111010;
+  background-color: #0f0f0f;
   width:75%;
   display: flex;
   margin-left: auto;
@@ -145,7 +146,7 @@ th{
 .tab_sidebar{
   width:250px;
   flex-shrink: 0;
-  background-color: #cccccc;
+  background-color: #080808;
   height: 100%;
 }
 
@@ -153,7 +154,8 @@ th{
   display:block;
   font-size: 16px;
   padding: 20px;
-  background: #eeeeee;
+  background: #080808;
+  color:white;
   border: none;
   width:100%;
   outline:none;
@@ -161,17 +163,18 @@ th{
 }
 
 .tab_button:active{
-  background-color: #dddddd;
+  background-color: #141414;
 }
 
 .tab_button:not(:last-of-type){
-  border-bottom: 1px solid #cccccc;
+  border-bottom: 1px solid #302d2d;
 }
 
 .tab_button--active{
   font-weight: bold;
-  border-right: 2px solid #009897;
-  background-color: #dddddd;
+  border-right: 3px solid #274196;
+  border-left: 3px solid #274196;
+  background-color:#141414;
 }
 
 .tab_content{
@@ -209,7 +212,17 @@ th{
   grid-column: 3/9;
   overflow: auto;
   color:white;
+  scrollbar-color:#274196 #080808 ;
 }
+
+.music_data_div::-webkit-scrollbar{
+  background-color: #080808;
+}
+
+.music_data_div::-webkit-scrollbar-thumb{
+  background-color: #274196;
+}
+
 /*styling the sidebar*/
 .sidebar{
   grid-row: 2/span 2;
@@ -230,7 +243,6 @@ th{
   grid-column: 5/6;
   background-color: #080808;
 }
-
 
 
 /*styling the popup login form*/
@@ -359,7 +371,7 @@ th{
   margin-right: auto;
   width: 400px;
   height: 100%;
-  background-color: #080808;
+  background-color: #0f0f0f;
   color: white;
   box-sizing: border-box;
   padding: 20px 30px 10px 30px;
@@ -391,7 +403,7 @@ th{
   background: white;
   outline: none;
   height: 40px;
-  color: black;
+  color: #0f0f0f;
   font-size: 16px;
   padding-left: 5px;
   margin-top: 10px;
@@ -453,7 +465,7 @@ th{
   cursor: pointer;
 }
 
-/*Styling the home page*/
+/************Styling the home page************/
 .hp_container #hp_title{
   width: 30%;
   text-align: center;
@@ -490,6 +502,52 @@ th{
   height: 280px;
   width: 280px;
   text-align: center;
+  position: relative;
+}
+
+.image_container {
+  position: relative;
+  width: 50%;
+}
+
+.hp_image {
+  display: block;
+  width: 280px;
+  height: 280px;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 280px;
+  opacity: 0;
+  transition: .2s ease;
+  background-color: white;
+}
+
+.image_container:hover .overlay {
+  opacity: 1;
+}
+
+.text {
+  color: black;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.dark-mode {
+  background-color: white;
+  color: black;
 }
 
 @media only screen and (max-width:800px){
@@ -543,10 +601,15 @@ th{
     width: 30%;
     padding-top:10px;
   }
+
+
   .column {
     width: 100%;
     display: block;
     margin-bottom: 20px;
+    margin-left: 25%;
+    margin-right: 25%;
+    padding:0;
   }
 
 }
