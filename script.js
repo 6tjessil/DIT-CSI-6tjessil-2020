@@ -41,12 +41,6 @@ function loginform(){
   document.getElementById('login_form').style.display='block';
 }
 }
-document.getElementById("darkmode").addEventListener("click", myFunction);
-
-function myFunction() {
-  var element = document.body;
-  element.classList.toggle("dark-mode");
-}
 
 $(function(){
   $("#login_form").submit(function(e){

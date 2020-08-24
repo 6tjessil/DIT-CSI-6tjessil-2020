@@ -116,6 +116,7 @@ table{
 tr{
   color: white;
   height:50px;
+  width:200px;
 }
 
 td{
@@ -230,6 +231,20 @@ th{
   height:500px;
   background-color: #080808;
 }
+.sidebar h2{
+  text-align:center;
+  padding-top:20px;
+  padding-bottom:15px;
+  border-bottom:1px solid white;
+}
+.sidebar a{
+ padding: 15px 0px 10px 0px;
+  text-decoration: none;
+  text-align:center;
+  font-size: 16px;
+  color: white;
+  display: block;}
+  
 /*styling the playlist image*/
 .image{
   grid-row: 2/3;

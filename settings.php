@@ -1,4 +1,3 @@
-<!-- localhost/UseThis/03_UserListTable.php-->
 <?php session_start(); 
 	if(!isset($_SESSION["login_user"])){
 		header ("location: index.php");

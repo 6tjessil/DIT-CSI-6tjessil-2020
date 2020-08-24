@@ -1,4 +1,3 @@
-<!--First Query-->
 <?php session_start(); 
 	if(!isset($_SESSION["login_user"])){
 		header ("location: index.php");
@@ -20,13 +19,28 @@
   ?>
 	<div id = "your_library_content">
 		<div class = "sidebar">
-		fghjkl;cfghjkl;	
+                 <h2>Playlists</h2>
+                 <a style="color:blue;"href="your_library.php">Main</a>
+                 <a href="playlist1.php">Playlist1</a>
+                 <a href="playlist2.php">Playlist2</a>
 		</div>
 		<div class="image">
 		image
 		</div>
 		<div class="playlist_details">
-		playlist_details
+		<?php
+                //creates a variable to store the sql query
+                require_once("connect.php");
+                $query = ("SELECT SEC_TO_TIME(SUM(s.duration)) as `TotalDuration`FROM song AS s");
+            
+                $result = mysqli_query($con,$query);
+                while($output=mysqli_fetch_array($result))
+                { 
+                ?>
+                        <?php echo "Total : ", $output["TotalDuration"]?>
+                <?php
+                }
+                ?>  
 		</div>
 		<div class = "music_data_div">
 			<div class="data">
@@ -40,14 +54,14 @@
 					<th>Size</th>
 				</tr>
 				<?php
-				require_once("connect.php");
+				
 				$query = "SELECT s.title, ar.artist, al.album, GROUP_CONCAT(DISTINCT g.genre SEPARATOR ', ') AS 'Genre', RIGHT (SEC_TO_TIME(s.duration), 5) AS 'Duration',  s.size 
 				FROM song AS s 
 				JOIN artist AS ar ON s.artist_id = ar.artist_id 
 				JOIN album AS al ON s.album_id = al.album_id
 				JOIN song_to_genre AS sg ON s.song_id = sg.song_id
 				JOIN genre AS g ON g.genre_id = sg.genre_id 
-				GROUP BY s.title DESC, ar.artist DESC";
+				GROUP BY s.song_ID";
 				$rs = mysqli_query($con, $query);
 				if ($rs) {
 					while ($row = mysqli_fetch_array($rs)) {

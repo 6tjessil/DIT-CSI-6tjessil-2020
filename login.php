@@ -1,5 +1,4 @@
 <?php
-//Login Page
 session_start();
     $output_message = null;
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
