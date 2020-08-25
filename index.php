@@ -53,8 +53,6 @@
         </div>
       </div>
     </div>
-<iframe src="https://www.youtube.com/embed/o7lqCcE4Lho" width="500" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
-
 </div>
 
 <?php
@@ -64,6 +62,7 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="script.js"></script>
+
 
 </body>
 

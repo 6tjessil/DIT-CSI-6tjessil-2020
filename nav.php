@@ -7,7 +7,7 @@ if(isset($_SESSION['login_user'])){?>
                 <li><a href="index.php">Home</a></li>
                 <li><a href="your_library.php">Your Library</a></li>
                 <li><a href="form.php">Contact</a></li>
-                <li><a href="#" id = "darkmode">Theme   </a></li>
+                <li><a href="#" id="themebtn">Theme</a></li>
                 <div class="dropdown">
                     <button class="dropbtn">Hi <?php echo $_SESSION['login_user']; ?></button>
                     <div class="dropdown-content">
@@ -28,16 +28,10 @@ if(isset($_SESSION['login_user'])){?>
     <div class="mainlinks">
         <li><a href="index.php">Home</a></li>
         <li><a href="form.php">Contact</a></li>
+        <li><a href="#" onclick="theme()">Theme</a></li>
         <li><a href="#" id = "loginbtn">Login</a></li>
         <li><a href="#" id = "signupbtn">Sign Up</a></li>
     </div>
 </nav>
 <?php } ?>
 
-
-<!--<div class = "theme-switch-wrapper">
-        <label class="theme-switch" for="checkbox">
-            <input type="checkbox" id="checkbox" />
-            <div class="slider round"></div>
-        </label>
-    </div>-->

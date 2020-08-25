@@ -60,8 +60,9 @@
 				JOIN artist AS ar ON s.artist_id = ar.artist_id 
 				JOIN album AS al ON s.album_id = al.album_id
 				JOIN song_to_genre AS sg ON s.song_id = sg.song_id
-				JOIN genre AS g ON g.genre_id = sg.genre_id 
-				GROUP BY g.genre ASC, ar.artist ASC";
+				JOIN genre AS g ON g.genre_id = sg.genre_id
+                               	GROUP BY s.song_id
+                                ORDER BY g.genre ASC, ar.artist ASC";
 				$rs = mysqli_query($con, $query);
 				if ($rs) {
 					while ($row = mysqli_fetch_array($rs)) {
@@ -71,6 +72,7 @@
 					}
 				}
 				?>
+                                
 				</table>
 			</div>
 		</div>

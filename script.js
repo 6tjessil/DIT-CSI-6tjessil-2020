@@ -28,6 +28,12 @@ document.addEventListener("DOMContentLoaded", () => {
   })
 });
 
+document.getElementById("themebtn").addEventListner("click", theme());
+
+function theme(){
+     document.getElementsByTagName("html")[0].style("--mcolor:black;") 
+}
+
 if (document.getElementById("signupbtn") != null){
 document.getElementById("signupbtn").addEventListener("click", signupform);
 
@@ -40,6 +46,7 @@ document.getElementById("loginbtn").addEventListener("click", loginform);
 function loginform(){
   document.getElementById('login_form').style.display='block';
 }
+
 }
 
 $(function(){

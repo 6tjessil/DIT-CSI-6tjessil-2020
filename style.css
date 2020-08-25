@@ -9,8 +9,8 @@
 
 body{
   font-family:arial;
-  background-color: #111010;
-  color:white;
+  background-color: var('--mcolor');
+  color:var('--scolor');;
 }
 
 nav { /*Nav bar */
@@ -563,6 +563,11 @@ th{
 .dark-mode {
   background-color: white;
   color: black;
+}
+
+:root{
+    --mcolor: white;
+    --scolor:black;
 }
 
 @media only screen and (max-width:800px){
