@@ -1,4 +1,4 @@
-<?php session_start(); 
+<?php session_start(); //This ensures that a user can only view this page if they are logged in
 	if(!isset($_SESSION["login_user"])){
 		header ("location: index.php");
 	} 
@@ -7,7 +7,7 @@
 <html lang="en">
 
 <head>
-  <title>TJessil</title>
+  <title>Graham's Music</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="style.css">
@@ -17,19 +17,20 @@
   <?php
   require("nav.php")
   ?>
-	<div id = "your_library_content">
+	<div id = "your_library_content"> <!--Links for the sidebar goes in here-->
 		<div class = "sidebar">
                  <h2>Playlists</h2>
-                 <a style="color:blue;"href="your_library.php">Main</a>
+                 <a style="color:#274196;"href="your_library.php">Main</a>
                  <a href="playlist1.php">Playlist1</a>
                  <a href="playlist2.php">Playlist2</a>
 		</div>
 		<div class="image">
-		image
 		</div>
 		<div class="playlist_details">
+                All music data ordered by song_id
+                <br>
 		<?php
-                //creates a variable to store the sql query
+                //This is running the total duration query
                 require_once("connect.php");
                 $query = ("SELECT SEC_TO_TIME(SUM(s.duration)) as `TotalDuration`FROM song AS s");
             
@@ -37,7 +38,7 @@
                 while($output=mysqli_fetch_array($result))
                 { 
                 ?>
-                        <?php echo "Total : ", $output["TotalDuration"]?>
+                        <?php echo "Total Duration: ", $output["TotalDuration"]?>
                 <?php
                 }
                 ?>  
@@ -46,7 +47,8 @@
 			<div class="data">
 				<table>
 				<tr>
-					<th>Title</th>
+					<th></th>
+                                        <th>Title</th>
 					<th>Artist</th>
 					<th>Album</th>
 					<th>Genre</th>
@@ -54,8 +56,8 @@
 					<th>Size</th>
 				</tr>
 				<?php
-				
-				$query = "SELECT s.title, ar.artist, al.album, GROUP_CONCAT(DISTINCT g.genre SEPARATOR ', ') AS 'Genre', RIGHT (SEC_TO_TIME(s.duration), 5) AS 'Duration',  s.size 
+				//This is running a query that displays all data ordered by song_id
+				$query = "SELECT s.title, ar.artist, al.album, GROUP_CONCAT(DISTINCT g.genre SEPARATOR ', ') AS 'Genre', s.duration,  s.size 
 				FROM song AS s 
 				JOIN artist AS ar ON s.artist_id = ar.artist_id 
 				JOIN album AS al ON s.album_id = al.album_id
@@ -65,8 +67,8 @@
 				$rs = mysqli_query($con, $query);
 				if ($rs) {
 					while ($row = mysqli_fetch_array($rs)) {
-					echo "<tr><td>" . $row['title'] . "</td><td>" . $row['artist'] . "</td>
-					<td>" . $row['album'] . "</td><td>" . $row['Genre'] . "</td><td>" . $row['Duration'] . "</td>
+					echo "<tr><td><img id='playbutton' src='play-button.png'></td><td>" . $row['title'] . "</td>
+					<td>" . $row['artist'] . "</td><td>" . $row['album'] . "</td><td>" . $row['Genre'] . "</td><td>" . $row['duration'] . "</td>
 					<td>" . $row['size'] . "</td></tr>";
 					}
 				}
@@ -76,5 +78,8 @@
 		</div>
 	</div>
 </body>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
 <script src="script.js"></script>
+
+
 </html>

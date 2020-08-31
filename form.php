@@ -3,41 +3,34 @@
 <html lang="en">
 
 <head>
-  <title>TJessil</title>
+  <title>Graham's Music</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
+<body> <!--Requiring php files so that features are accessible to the user-->
   <?php
   require("nav.php")
   ?>
-  contact page
   <?php
   require("login_form.php");
   require('signup_form.php');
   ?>
   
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="script.js"></script>
-
-  <div id="contact_form" >
-  <div class = "contact_box">
-    <p name = "contact_message"></p>
-    <h1>Contact Us</h1>
-    <form method = "POST" action="mail-test.php">
-      <p>Name</p>
-      <input type = "text" name = "name" placeholder="Please your name" id="name" required>
-      <p>Email</p>
-      <input type = "text" name = "email" placeholder="Please your email" id="email" required>
-      <p>Subject</p>
-      <textarea name = "subject" placeholder="Please enter your question" id = "query" required></textarea>
-      <input type = "submit" name = "submit" value= "Submit">
-    </form>
+<div class = "contact_form"> <!--Stores contact form code-->
+                <div class="contact_box">
+                    <h1>Contact Us</h1>
+                         <form action="mail-test.php" method="POST">
+                                <input type="text" id="name" name="name" placeholder="Your full name">
+                                <input type="text" id="email" name="email" placeholder="Your email">
+                                <textarea id ="body" name="body" placeholder="Write something..." style="height:200px"></textarea>
+                                <input type="submit" value="Submit">
+</form>
   </div>
 </div>
 
-</body>
-
+</body><!--Connects javascript files with site-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="script.js"></script>
 </html>

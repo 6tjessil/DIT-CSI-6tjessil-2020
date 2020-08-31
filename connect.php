@@ -1,9 +1,4 @@
-<?php
-//servername:localhost
-//username: TJessil
-//password: dojustly01
-//databasename: 'staff'
-
+<?php //Used to connect to the database
 	$con = mysqli_connect('fdb26.awardspace.net','3083550_6tjessil','dojustly01','3083550_6tjessil');
         if (mysqli_connect_errno())
         {

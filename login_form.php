@@ -1,4 +1,4 @@
-<div id="login_form" class="modal">
+<div id="login_form" class="modal"> <!--Stores code for the login form-->
   <div class = "login_box">
   <span onclick="document.getElementById('login_form').style.display='none'; document.getElementById('loginform_message').innerHTML = ''" class="close" title="Close Modal">&times;</span>
     <h1>Login</h1>

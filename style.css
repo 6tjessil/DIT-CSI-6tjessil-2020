@@ -1,6 +1,6 @@
 /*Style sheet*/
 
-@import url('https://fonts.googleapis.com/css2?family=Roboto&family=Varela+Round&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 /*Setting up site*/
 *{
   margin:0;
@@ -8,52 +8,68 @@
 }
 
 body{
-  font-family:arial;
-  background-color: var('--mcolor');
-  color:var('--scolor');;
+  font-family: 'Open Sans', sans-serif;
+  background-color: var(--mcolor);
+  color:var(--tcolor);
 }
 
 nav { /*Nav bar */
+  font-family: 'Open Sans', sans-serif;
   width:100%;
-  background-color: #080808;
+  background-color: var(--scolor);
   grid-row: 1;
+  display:inline-block;
 }
 
-.nav-title {
-  height: 100%;
-  padding-right:10px;
+.logo{ /*This is the code that styles the logo*/
+display:inline-block;
+float:left;
+padding-top:15px;
+padding-left:10%;
 }
 
+.logo a{
+text-decoration:none;
+color:var(--tcolor);
+}
+/*Code below styles the links in the navbar*/
 .mainlinks{
-  font-family: 'Varela Round';
-  background-color:#080808;
+  font-family: 'Open Sans', sans-serif;
+  background-color:var(--scolor);
   margin-left:auto;
   width:600px;
+  display:inline-block;
+  float:right;
+}
+
+.mainlinks p{
+  font-family: 'Open Sans', sans-serif;
+  float:left;
 }
 
 .mainlinks li a{
   display:inline-block;
   text-decoration:none;
-  color:white;
+  color:var(--tcolor);
   padding: 20.5px;
 }
 .mainlinks li{
   list-style:none;
-  background-color:#080808;
+  background-color:var(--scolor);
   display:inline-block;
   text-decoration:none;
 }
 
 .mainlinks a:hover{
-background-color: #ddd;
-color: black;
+background-color: var(--lhbgcolor);
+color: var(--lhcolor);
 }
 
 /* Style The Dropdown Button */
 .dropbtn {
-  background-color: #080808;
-  color: white;
-  font-family: 'Varela Round';
+  background-color:var(--scolor);
+  color:var(--tcolor);
+  font-family: 'Open Sans', sans-serif;
   padding: 20.5px;
   font-size: 16px;
   border: none;
@@ -69,21 +85,22 @@ color: black;
 
 /* Dropdown Content (Hidden by Default) */
 .dropdown-content {
-  font-family: 'Varela Round';
+  font-family: 'Open Sans', sans-serif;
   display: none;
   position: absolute;
-  background-color: #080808;
+  background-color: var(--scolor);
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
   width: 100%;
   margin-left:0px;
   padding-top:5px;
   padding-bottom:5px;
+  color:var(--tcolor);
 }
 
 /* Links inside the dropdown */
 .dropdown-content a {
-  color: white;
+  color:var(--tcolor);
   padding: 12px 16px;
   text-decoration: none;
   width: 100%;
@@ -92,17 +109,18 @@ color: black;
 }
 
 /* Change color of dropdown links on hover */
-.dropdown-content a:hover {background-color: #f1f1f1;color: #080808;width:73%;}
+.dropdown-content a:hover {background-color:var(--lhbgcolor);color: var(--lhcolor);width:73%;}
 
 /* Show the dropdown menu on hover */
 .dropdown:hover .dropdown-content {
+  color:var(--tcolor);
   display: block;
 }
 
 /* Change the background color of the dropdown button when the dropdown content is shown */
 .dropdown:hover .dropbtn {
-  background-color: #ddd;
-  color: black;
+  background-color: var(--scolor);
+  color:var(--tcolor);
 }
 
 /*This is used to setup the way the tables will look (this is used to display data)*/
@@ -113,19 +131,19 @@ table{
    padding:10px;
 }
 
-tr{
-  color: white;
+tr{ /*Styles table row*/
+  color:var(--tcolor);
   height:50px;
   width:200px;
 }
 
-td{
+td{ /
   padding-top:5px;
   padding-bottom: 5px;
 }
 
 tr:nth-child(odd){
-  background-color:#141414;
+  background-color:var(--mcolor);
 }
 
 th{
@@ -133,9 +151,9 @@ th{
   width:100px;
 }
 
-.tab{
-  border: 3px solid #111010;
-  background-color: #0f0f0f;
+/*Styles the tab content and buttons*/
+.tab{ 
+  background-color: var(-mtcolor);
   width:75%;
   display: flex;
   margin-left: auto;
@@ -147,7 +165,7 @@ th{
 .tab_sidebar{
   width:250px;
   flex-shrink: 0;
-  background-color: #080808;
+  background-color: var(--scolor);
   height: 100%;
 }
 
@@ -155,8 +173,8 @@ th{
   display:block;
   font-size: 16px;
   padding: 20px;
-  background: #080808;
-  color:white;
+  background: var(--scolor);
+  color:var(--tcolor);;
   border: none;
   width:100%;
   outline:none;
@@ -164,18 +182,19 @@ th{
 }
 
 .tab_button:active{
-  background-color: #141414;
+  background-color:color:var(--mcolor);;
 }
 
 .tab_button:not(:last-of-type){
-  border-bottom: 1px solid #302d2d;
+  border-bottom: 1px solid color:var(--scolor);;
 }
 
 .tab_button--active{
   font-weight: bold;
   border-right: 3px solid #274196;
   border-left: 3px solid #274196;
-  background-color:#141414;
+  background-color:var(--mcolor);
+  color:var(--tcolor);
 }
 
 .tab_content{
@@ -208,16 +227,16 @@ th{
 /*stores the tables used to display data*/
 .music_data_div{
   height:600px;
-  background-color: #080808;
+  background-color: var(--scolor);
   grid-row: 4/5;
   grid-column: 3/9;
   overflow: auto;
   color:white;
-  scrollbar-color:#274196 #080808 ;
+  scrollbar-color:#274196, var(--scolor) ;
 }
 
-.music_data_div::-webkit-scrollbar{
-  background-color: #080808;
+.music_data_div::-webkit-scrollbar{ /*Changing the color of the scroll bar in the your library page*/
+  background-color: var(--scolor);
 }
 
 .music_data_div::-webkit-scrollbar-thumb{
@@ -229,7 +248,7 @@ th{
   grid-row: 2/span 2;
   grid-column: 1/2;
   height:500px;
-  background-color: #080808;
+  background-color:var(--scolor);
 }
 .sidebar h2{
   text-align:center;
@@ -242,21 +261,21 @@ th{
   text-decoration: none;
   text-align:center;
   font-size: 16px;
-  color: white;
+  color: var(--tcolor);
   display: block;}
   
 /*styling the playlist image*/
 .image{
   grid-row: 2/3;
   grid-column: 3;
-  background-color: #080808;
+  background-color: var(--mcolor);
 }
 /*styling the playlist details section*/
 .playlist_details{
   margin-top: 100px;
   grid-row: 2/3;
-  grid-column: 5/6;
-  background-color: #080808;
+  grid-column: 5/7;
+  background-color: var(--mcolor);
 }
 
 
@@ -264,7 +283,7 @@ th{
 .login_box{
   width: 320px;
   height: 420px;
-  background-color: #080808;
+  background-color: var(--scolor);
   color: white;
   top: 50%;
   left: 50%;
@@ -279,12 +298,14 @@ th{
   padding: 0 0 20px;
   text-align: center;
   font-size: 30px;
+  color:var(--tcolor);
 }
 
 .login_box p{
   margin: 0;
   padding: 0;
   font-weight: bold;
+  color:var(--tcolor);
 }
 
 .login_box input{
@@ -298,7 +319,7 @@ th{
   background: transparent;
   outline: none;
   height: 40px;
-  color: #fff;
+  color: var(--tcolor);
   font-size: 16px;
 }
 
@@ -307,7 +328,7 @@ th{
   border: none;
   outline: none;
   height: 45px;
-  color:white;
+  color:var(--tcolor);
   background-color: #274196;
   font-size: 18px;
   cursor: pointer;
@@ -317,9 +338,10 @@ th{
 .contact_box{
   margin-left: auto;
   margin-right: auto;
+  margin-top:20px;
   width: 500px;
-  height: 650px;
-  background-color: #080808;
+  height: 550px;
+  background-color: var(--scolor);
   color: white;
   box-sizing: border-box;
   padding: 20px 30px 10px 30px;
@@ -330,12 +352,14 @@ th{
   padding: 0 0 20px;
   text-align: center;
   font-size: 30px;
+  color:var(--tcolor);
 }
 
 .contact_box p{
   margin: 0;
   padding: 0;
   font-weight: bold;
+  color:var(--tcolor);
 }
 
 .contact_box p[name = "message"]{
@@ -374,7 +398,7 @@ th{
   border: none;
   outline: none;
   height: 45px;
-  color:white;
+  color:var(--tcolor);
   background-color: #274196;
   font-size: 18px;
   cursor: pointer;
@@ -386,8 +410,8 @@ th{
   margin-right: auto;
   width: 400px;
   height: 100%;
-  background-color: #0f0f0f;
-  color: white;
+  background-color: var(--mcolor);
+  color: var(--tcolor);
   box-sizing: border-box;
   padding: 20px 30px 10px 30px;
 }
@@ -406,7 +430,7 @@ th{
 }
 
 .input_box p[id="input_box_message"]{
-  color:re d;
+  color:var(--tcolor);
 }
 
 .input_box input{
@@ -415,7 +439,7 @@ th{
 
 .input_box input[name = "input1"],input[name = "input2"]{
   border: none;
-  background: white;
+  background: lightgrey;
   outline: none;
   height: 40px;
   color: #0f0f0f;
@@ -432,7 +456,7 @@ th{
   border: none;
   outline: none;
   height: 45px;
-  color:white;
+  color:var(--tcolor);
   background-color: #274196;
   font-size: 18px;
   cursor: pointer;
@@ -480,7 +504,7 @@ th{
   cursor: pointer;
 }
 
-/************Styling the home page************/
+/************Styling the home (index) page************/
 .hp_container #hp_title{
   width: 30%;
   text-align: center;
@@ -531,7 +555,7 @@ th{
   height: 280px;
 }
 
-.overlay {
+.overlay { /*Used to create an effect when user hovers over the images in the index page*/
   position: absolute;
   top: 0;
   bottom: 0;
@@ -548,7 +572,7 @@ th{
   opacity: 1;
 }
 
-.text {
+.text { /*Text that is displayed during the hover effect*/
   color: black;
   font-size: 20px;
   position: absolute;
@@ -560,16 +584,24 @@ th{
   text-align: center;
 }
 
-.dark-mode {
-  background-color: white;
-  color: black;
+tr td:first-child, tr th:first-child{
+        width:10%;
 }
 
-:root{
-    --mcolor: white;
-    --scolor:black;
+:root {
+  --mcolor:#141414; /*Main colour*/
+  --scolor:#080808; /*Secondary colour*/
+  --tcolor:white;  /*Text colour*/
+  --lhbgcolor:#f7faf5;  /*Link Hover Background colour*/
+  --lhcolor:black;  /*Link hover colour*/
 }
 
+#playbutton:hover{
+  transition: transform .2s;
+  transform: scale(1.1);
+  cursor:pointer;
+}
+/*When the page is less than 800px in width, the styles below are applied*/
 @media only screen and (max-width:800px){
   .mainlinks {
     list-style-type: none;

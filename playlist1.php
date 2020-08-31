@@ -4,10 +4,10 @@
 	} 
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"> <!--This file is used to run and display the results of the first query-->
 
 <head>
-  <title>TJessil</title>
+  <title>Graham's Music</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="style.css">
@@ -18,35 +18,36 @@
   require("nav.php")
   ?>
 	<div id = "your_library_content">
-		<div class = "sidebar">
+		<div class = "sidebar"> <!--Below are the links used in the sidebar-->
                  <h2>Playlists</h2>
                  <a href ="your_library.php">Main</a>
-                 <a style="color:blue;"href="playlist1.php">Playlist1</a>
+                 <a style="color:#274196;"href="playlist1.php">Playlist1</a>
                  <a href="playlist2.php">Playlist2</a>
 		</div>
 		<div class="image">
-		image
 		</div>
 		<div class="playlist_details">
+                Show all music tracks and associated information sorted by Song title and then Artist(s) (Both highest first (Z -> A)) with the total time.
+                <br>
 		<?php
-                //creates a variable to store the sql query
                 require_once("connect.php");
-                $query = ("SELECT SEC_TO_TIME(SUM(s.duration)) as `TotalDuration`FROM song AS s");
+                $query = ("SELECT SEC_TO_TIME(SUM(s.duration)) as `TotalDuration`FROM song AS s"); //This is the total duration query
             
                 $result = mysqli_query($con,$query);
                 while($output=mysqli_fetch_array($result))
                 { 
                 ?>
-                        <?php echo "Total : ", $output["TotalDuration"]?>
+                        <?php echo "Total Duration: ", $output["TotalDuration"]?>
                 <?php
                 }
                 ?>  
 		</div>
 		<div class = "music_data_div">
 			<div class="data">
-				<table>
+                                <table> <!--HTML tables are used to structure the way the data is displayed-->
 				<tr>
-					<th>Title</th>
+					<th></th>
+                                        <th>Title</th>
 					<th>Artist</th>
 					<th>Album</th>
 					<th>Genre</th>
@@ -54,8 +55,8 @@
 					<th>Size</th>
 				</tr>
 				<?php
-				
-				$query = "SELECT s.title, ar.artist, al.album, GROUP_CONCAT(DISTINCT g.genre SEPARATOR ', ') AS 'Genre', RIGHT (SEC_TO_TIME(s.duration), 5) AS 'Duration',  s.size 
+				//Below is a query that orders the data by title then artist
+				$query = "SELECT s.title, ar.artist, al.album, GROUP_CONCAT(DISTINCT g.genre SEPARATOR ', ') AS 'Genre', s.duration,  s.size 
 				FROM song AS s 
 				JOIN artist AS ar ON s.artist_id = ar.artist_id 
 				JOIN album AS al ON s.album_id = al.album_id
@@ -64,10 +65,10 @@
 				GROUP BY s.song_id
                                 ORDER BY s.title DESC, ar.artist DESC";
 				$rs = mysqli_query($con, $query);
-				if ($rs) {
+				if ($rs) { 
 					while ($row = mysqli_fetch_array($rs)) {
-					echo "<tr><td>" . $row['title'] . "</td><td>" . $row['artist'] . "</td>
-					<td>" . $row['album'] . "</td><td>" . $row['Genre'] . "</td><td>" . $row['Duration'] . "</td>
+					echo "<tr><td><img id='playbutton' src='play-button.png'></td><td>" . $row['title'] . "</td>
+					<td>" . $row['artist'] . "</td><td>" . $row['album'] . "</td><td>" . $row['Genre'] . "</td><td>" . $row['duration'] . "</td>
 					<td>" . $row['size'] . "</td></tr>";
 					}
 				}

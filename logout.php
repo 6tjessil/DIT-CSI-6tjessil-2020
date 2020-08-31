@@ -1,4 +1,4 @@
-<?php
+<?php //Destroys session and logs user out
 session_start();
 if(isset($_SESSION['login_user'])){
     session_destroy();

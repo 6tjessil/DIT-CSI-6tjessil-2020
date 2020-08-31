@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-  <title>TJessil</title>
+  <title>Graham's Music</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="style.css">
@@ -14,7 +14,7 @@
   require("nav.php");
   ?>
 
-<div class = "hp_container">
+<div class = "hp_container"> <!--Code below is used to create containers to store song cover images-->
   <div id = "hp_title">
     New Releases
   </div>
@@ -25,7 +25,7 @@
           <div class="image_container">
             <img src="image.jpg" alt="Avatar" class="hp_image">
              <div class="overlay">
-            <div class="text">Hello World</div>
+            <div class="text"> </div>
           </div>
              </div>
         </div>
@@ -36,7 +36,7 @@
           <div class="image_container">
             <img src="image.jpg" alt="Avatar" class="hp_image">
              <div class="overlay">
-            <div class="text">Hello World</div>
+            <div class="text"> </div>
           </div>
              </div>
         </div>
@@ -47,15 +47,15 @@
           <div class="image_container">
             <img src="image.jpg" alt="Avatar" class="hp_image">
              <div class="overlay">
-            <div class="text">Hello World</div>
+            <div class="text"> </div>
           </div>
              </div>
         </div>
       </div>
     </div>
 </div>
-
-<?php
+<!--Requiring the below files to ensure that the login and signup system works-->
+<?php 
   require("login_form.php");
   require('signup_form.php');
 ?>
