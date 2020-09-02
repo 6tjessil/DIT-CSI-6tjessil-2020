@@ -137,7 +137,7 @@ tr{ /*Styles table row*/
   width:200px;
 }
 
-td{ /
+td{ 
   padding-top:5px;
   padding-bottom: 5px;
 }
@@ -182,11 +182,11 @@ th{
 }
 
 .tab_button:active{
-  background-color:color:var(--mcolor);;
+  background-color:var(--mcolor);
 }
 
 .tab_button:not(:last-of-type){
-  border-bottom: 1px solid color:var(--scolor);;
+  border-bottom: 1px solid var(--scolor);
 }
 
 .tab_button--active{
@@ -515,7 +515,6 @@ th{
 }
 
 .hp_container #hp_images{
-  width:950px;
   height: auto;
   margin-left:auto;
   margin-right: auto;
@@ -532,8 +531,8 @@ th{
 
 .column{
   float: left;
-  width: 30%;
-  padding-left: 30px;
+  width: 33%;
+  padding-left: 0;
 }
 
 .hp_image_holder{
@@ -542,6 +541,7 @@ th{
   width: 280px;
   text-align: center;
   position: relative;
+  margin-left:calc(50% - 140px);
 }
 
 .image_container {
@@ -654,14 +654,10 @@ tr td:first-child, tr th:first-child{
     padding-top:10px;
   }
 
-
   .column {
-    width: 100%;
+    width:100%;
     display: block;
     margin-bottom: 20px;
-    margin-left: 25%;
-    margin-right: 25%;
-    padding:0;
   }
 
 }
