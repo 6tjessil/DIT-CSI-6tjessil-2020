@@ -25,6 +25,7 @@
                  <a href="playlist2.php">Playlist2</a>
 		</div>
 		<div class="image">
+		<img src='images/image_3.jpg'>
 		</div>
 		<div class="playlist_details">
                 All music data ordered by song_id
@@ -67,7 +68,7 @@
 				$rs = mysqli_query($con, $query);
 				if ($rs) {
 					while ($row = mysqli_fetch_array($rs)) {
-					echo "<tr><td><img id='playbutton' src='play-button.png'></td><td>" . $row['title'] . "</td>
+					echo "<tr><td><img id='playbutton' src='images/play-button.png'></td><td>" . $row['title'] . "</td>
 					<td>" . $row['artist'] . "</td><td>" . $row['album'] . "</td><td>" . $row['Genre'] . "</td><td>" . $row['duration'] . "</td>
 					<td>" . $row['size'] . "</td></tr>";
 					}

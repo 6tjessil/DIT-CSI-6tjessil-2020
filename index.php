@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-  <title>Graham's Music</title>
+  <title>Vibes</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="style.css">
@@ -23,10 +23,12 @@
       <div class = "column">
         <div class = "hp_image_holder">
           <div class="image_container">
-            <img src="image.jpg" alt="Avatar" class="hp_image">
+            <img src="images/imgdra.jpg" alt="Imagine Dragons" class="hp_image">
              <div class="overlay">
-            <div class="text"> </div>
-          </div>
+            <div class="text"> 
+            Radioactive by Imagine Dragons
+            </div>
+            </div>
              </div>
         </div>
       </div>
