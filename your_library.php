@@ -21,13 +21,14 @@
 		<div class = "sidebar">
                  <h2>Playlists</h2>
                  <a style="color:#274196;"href="your_library.php">Main</a>
-                 <a href="playlist1.php">Playlist1</a>
-                 <a href="playlist2.php">Playlist2</a>
+                 <a href="playlist1.php">Title</a>
+                 <a href="playlist2.php">Genre</a>
 		</div>
 		<div class="image">
+		<img src='images/image_3.jpg'>
 		</div>
 		<div class="playlist_details">
-                All music data ordered by song_id
+                This is a custom playlist containing all your uploaded songs
                 <br>
 		<?php
                 //This is running the total duration query
@@ -67,7 +68,7 @@
 				$rs = mysqli_query($con, $query);
 				if ($rs) {
 					while ($row = mysqli_fetch_array($rs)) {
-					echo "<tr><td><img id='playbutton' src='play-button.png'></td><td>" . $row['title'] . "</td>
+					echo "<tr><td><img id='playbutton' src='images/play-button.png'></td><td>" . $row['title'] . "</td>
 					<td>" . $row['artist'] . "</td><td>" . $row['album'] . "</td><td>" . $row['Genre'] . "</td><td>" . $row['duration'] . "</td>
 					<td>" . $row['size'] . "</td></tr>";
 					}
@@ -78,7 +79,7 @@
 		</div>
 	</div>
 </body>
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+<script src="jquery-3.5.1.min.js"></script>
 <script src="script.js"></script>
 
 

@@ -21,13 +21,14 @@
 		<div class = "sidebar">
                  <h2>Playlists</h2>
                  <a href="your_library.php">Main</a>
-                 <a href="playlist1.php">Playlist1</a>
-                 <a style="color:#274196;"href="playlist2.php">Playlist2</a>
+                 <a href="playlist1.php">Title</a>
+                 <a style="color:#274196;"href="playlist2.php">Genre</a>
 		</div>
 		<div class="image">
+		<img src='images/image_2.jpg'>
 		</div>
                 <div class="playlist_details">
-                Show all music tracks and associated information sorted by Genre and then Artist(s) (Both lowest first (A -> Z)) with the total time. 
+                Songs ordered by genre and artist 
                 <br>
 		<?php
                 require_once("connect.php");
@@ -67,7 +68,7 @@
 				$rs = mysqli_query($con, $query);
 				if ($rs) {
 					while ($row = mysqli_fetch_array($rs)) {
-					echo "<tr><td><img id='playbutton' src='play-button.png'></td><td>" . $row['title'] . "</td>
+					echo "<tr><td><img id='playbutton' src='images/play-button.png'></td><td>" . $row['title'] . "</td>
 					<td>" . $row['artist'] . "</td><td>" . $row['album'] . "</td><td>" . $row['Genre'] . "</td><td>" . $row['duration'] . "</td>
 					<td>" . $row['size'] . "</td></tr>";
 					}

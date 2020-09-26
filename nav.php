@@ -4,7 +4,7 @@ if(session_id() == ''){session_start();}
 if(isset($_SESSION['login_user'])){?>
             <nav>
             <div class = "logo">
-                    <h2><a href="index.php">Graham's Music</a></h2>
+                    <h2><a href="index.php">VIBES</a></h2>
             </div>
             <div class="mainlinks"> <!--Links-->
                 <li><a href="index.php">Home</a></li>
@@ -29,7 +29,7 @@ if(isset($_SESSION['login_user'])){?>
                         ?>
 <nav>
     <div class = "logo">
-        <h2><a href="index.php">Graham's Music</a></h2>
+        <h2><a href="index.php">VIBES</a></h2>
     </div>
     <div class="mainlinks"> <!--Links-->
         <li><a href="index.php">Home</a></li>
