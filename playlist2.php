@@ -28,7 +28,7 @@
 		<img src='images/image_2.jpg'>
 		</div>
                 <div class="playlist_details">
-                Songs ordered by genre and artist 
+                Songs sorted by genre and then by artists
                 <br>
 		<?php
                 require_once("connect.php");

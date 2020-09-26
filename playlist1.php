@@ -28,7 +28,7 @@
 		<img src='images/image_1.jpg'>
 		</div>
 		<div class="playlist_details">
-                Songs ordered by title and artists
+                Songs sorted by title and then by artists
                 <br>
 		<?php
                 require_once("connect.php");

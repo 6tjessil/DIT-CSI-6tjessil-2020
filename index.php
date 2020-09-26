@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-  <title>Vibes</title>
+  <title>Graham's Music</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="style.css">
@@ -23,17 +23,10 @@
       <div class = "column">
         <div class = "hp_image_holder">
           <div class="image_container">
-<<<<<<< HEAD
             <img src="images/wap.jpg" alt="Cardi B" class="hp_image">
              <div class="overlay">
             <div class="text"> 
             WAP by Cardi B
-=======
-            <img src="images/imgdra.jpg" alt="Imagine Dragons" class="hp_image">
-             <div class="overlay">
-            <div class="text"> 
-            Radioactive by Imagine Dragons
->>>>>>> bcfe751337d8eaf45fd7533aa50a66dca2ef7bf4
             </div>
             </div>
              </div>
@@ -54,9 +47,9 @@
       <div class = "column">
       <div class = "hp_image_holder">
           <div class="image_container">
-            <img src="images/blindinglights.jpg" alt="Avatar" class="hp_image">
+            <img src="images/blindinglights.jpg" alt="The Weeknd" class="hp_image">
              <div class="overlay">
-            <div class="text">Blinding Lights by TheWeeknd</div>
+            <div class="text">Blinding Lights by The Weeknd</div>
           </div>
              </div>
         </div>

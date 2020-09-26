@@ -28,7 +28,7 @@
 		<img src='images/image_3.jpg'>
 		</div>
 		<div class="playlist_details">
-                This is a custom playlist containing all your uploaded songs
+                All your uploaded music are in this playlist
                 <br>
 		<?php
                 //This is running the total duration query

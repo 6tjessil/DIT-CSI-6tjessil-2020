@@ -268,13 +268,8 @@ th{
   font-size: 16px;
   color: var(--tcolor);
   display: block;
-<<<<<<< HEAD
   font-weight: bold;
 }
-=======
-  font-weight: bold;}
-  
->>>>>>> bcfe751337d8eaf45fd7533aa50a66dca2ef7bf4
   
 /*styling the playlist image*/
 .image{
